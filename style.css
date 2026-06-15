@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Lora:wght@400;600&display=swap');
+
+:root {
+  --black: #0a0a0a;
+  --charcoal: #1a1a1a;
+  --dark-slate: #222222;
+  --card-bg: #2a2a2a;
+  --ivory: #f5f0e8;
+  --ivory-dim: #c8c0b0;
+  --gold: #c9a96e;
+  --gold-light: #d4b87a;
+  --gold-dark: #a8893e;
+  --white: #ffffff;
+  --overlay: rgba(10,10,10,0.65);
+  --overlay-dark: rgba(10,10,10,0.8);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Poppins',sans-serif;
+  background:var(--black);
+  color:var(--ivory);
+  font-size:14px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+.wrapper {
+  max-width:500px;
+  margin:0 auto;
+  background:var(--charcoal);
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+}
+
+/* ===== COVER ===== */
+.cover {
+  height:100vh; width:100%;
+  background:url('background 1.jpg') center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:10;
+}
+.cover::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.7) 100%);
+}
+.cover-content {
+  position:relative; z-index:2; text-align:center; padding:20px;
+}
+.cover-content .label { font-family:'Poppins'; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.cover-content .couple-name { font-family:'Great Vibes'; font-size:52px; color:var(--white); margin:10px 0; line-height:1.2; }
+.cover-content .date { font-family:'Lora'; font-size:14px; color:var(--ivory-dim); letter-spacing:2px; margin-bottom:30px; }
+.cover-content .guest-label { font-size:12px; color:var(--ivory-dim); margin-bottom:4px; }
+.cover-content .guest-name { font-family:'Playfair Display'; font-size:20px; font-weight:700; color:var(--gold-light); margin-bottom:30px; }
+.btn-open {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 28px; border:1.5px solid var(--gold); background:transparent;
+  color:var(--gold); font-family:'Poppins'; font-size:13px; cursor:pointer;
+  border-radius:30px; transition:all .3s; letter-spacing:1px;
+}
+.btn-open:hover { background:var(--gold); color:var(--black); }
+
+/* ===== SECTIONS COMMON ===== */
+section { padding:60px 24px; }
+.section-title {
+  font-family:'Playfair Display'; font-size:24px; font-weight:700;
+  text-align:center; letter-spacing:3px; color:var(--gold);
+  margin-bottom:8px; text-transform:uppercase;
+}
+.section-subtitle {
+  text-align:center; font-size:12px; color:var(--ivory-dim);
+  margin-bottom:30px; line-height:1.7;
+}
+.divider {
+  width:60px; height:2px; background:var(--gold); margin:16px auto;
+}
+
+/* ===== OPENING ===== */
+.opening { text-align:center; background:var(--dark-slate); }
+.opening .bismillah { font-size:13px; color:var(--ivory-dim); margin-bottom:6px; }
+.opening .label2 { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); }
+.opening .couple-script { font-family:'Great Vibes'; font-size:44px; color:var(--white); margin:10px 0; }
+.opening .date2 { font-size:13px; color:var(--ivory-dim); letter-spacing:1px; }
+.opening .main-photo {
+  width:75%; max-width:280px; aspect-ratio:3/4;
+  object-fit:cover; border-radius:20px;
+  border:3px solid var(--gold-dark); margin:24px auto 16px;
+  display:block;
+}
+.initials {
+  display:flex; align-items:center; justify-content:center; gap:16px;
+  font-family:'Playfair Display'; font-size:40px; font-weight:700; color:var(--gold);
+  margin:10px 0 20px;
+}
+.initials span { width:2px; height:40px; background:var(--gold); display:block; }
+.photo-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+  max-width:320px; margin:0 auto;
+}
+.photo-grid img {
+  width:100%; aspect-ratio:1; object-fit:cover;
+  border-radius:10px; border:2px solid var(--gold-dark);
+}
+
+/* ===== BRIDE & GROOM ===== */
+.bride-groom { background:var(--charcoal); text-align:center; }
+.bride-groom .section-title { text-shadow:2px 2px 0 rgba(201,169,110,0.3), 4px 4px 0 rgba(0,0,0,0.2); }
+.person-card { margin-bottom:40px; }
+.arch-frame {
+  width:200px; height:260px; margin:0 auto 10px;
+  border-radius:100px 100px 0 0;
+  overflow:hidden; border:3px solid var(--gold);
+  position:relative;
+}
+.arch-frame img { width:100%; height:100%; object-fit:cover; }
+.person-nick {
+  font-family:'Great Vibes'; font-size:36px; color:var(--gold-light);
+  margin-top:-24px; position:relative; z-index:2;
+  text-shadow:0 2px 8px rgba(0,0,0,0.8);
+}
+.person-full { font-family:'Playfair Display'; font-size:16px; font-weight:600; color:var(--white); margin:8px 0 4px; }
+.person-parents { font-size:12px; color:var(--ivory-dim); line-height:1.7; }
+.person-address { font-size:11px; color:var(--ivory-dim); margin-top:4px; font-style:italic; }
+.amp-symbol { font-family:'Great Vibes'; font-size:48px; color:var(--gold); margin:10px 0; }
+
+/* ===== COUNTDOWN ===== */
+.countdown-section {
+  background:url('countdown bg.jpg') center/cover no-repeat;
+  position:relative; text-align:center; padding:60px 24px;
+}
+.countdown-section::before { content:''; position:absolute; inset:0; background:var(--overlay-dark); }
+.countdown-section * { position:relative; z-index:2; }
+.countdown-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:10px;
+  max-width:320px; margin:20px auto;
+}
+.countdown-item {
+  background:rgba(201,169,110,0.15); border:1px solid var(--gold-dark);
+  border-radius:12px; padding:14px 8px;
+}
+.countdown-item .num { font-family:'Playfair Display'; font-size:30px; font-weight:700; color:var(--gold-light); }
+.countdown-item .lbl { font-size:10px; color:var(--ivory-dim); text-transform:uppercase; letter-spacing:1px; }
+.quran-section { margin-top:30px; }
+.quran-section .ayat-title { font-family:'Lora'; font-size:14px; color:var(--gold); margin-bottom:10px; }
+.quran-section .arabic { font-size:20px; line-height:2; color:var(--white); direction:rtl; margin-bottom:14px; font-family:serif; }
+.quran-section .translation { font-size:12px; color:var(--ivory-dim); line-height:1.8; font-style:italic; max-width:380px; margin:0 auto; }
+
+/* ===== WEDDING EVENT ===== */
+.wedding-event { background:var(--dark-slate); }
+.event-card {
+  background:url('event bg akad nikah.jpg') center/cover no-repeat;
+  border-radius:20px 20px 20px 20px; overflow:hidden;
+  position:relative; padding:40px 20px; text-align:center;
+  margin-bottom:20px;
+}
+.event-card-resepsi {
+  background-image:url('event bg resepsi.jpg') !important;
+}
+.event-card::before { content:''; position:absolute; inset:0; background:var(--overlay-dark); border-radius:inherit; }
+.event-card * { position:relative; z-index:2; }
+.event-card .ev-title { font-family:'Great Vibes'; font-size:30px; color:var(--gold-light); margin-bottom:6px; }
+.event-card .ev-date { font-family:'Lora'; font-size:13px; color:var(--ivory); margin-bottom:4px; }
+.event-card .ev-time { font-size:12px; color:var(--ivory-dim); margin-bottom:10px; }
+.event-card .ev-icon { font-size:22px; color:var(--gold); margin-bottom:4px; }
+.event-card .ev-place { font-size:13px; color:var(--white); font-weight:500; margin-bottom:14px; }
+.btn-outline {
+  display:inline-block; padding:8px 22px;
+  border:1.5px solid var(--gold); color:var(--gold);
+  border-radius:25px; font-size:12px; text-decoration:none;
+  transition:all .3s; cursor:pointer; background:transparent;
+}
+.btn-outline:hover { background:var(--gold); color:var(--black); }
+
+/* ===== GALLERY ===== */
+.gallery { background:var(--charcoal); }
+.gallery-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+}
+.gallery-grid img {
+  width:100%; aspect-ratio:1; object-fit:cover;
+  border-radius:8px; border:2px solid var(--gold-dark);
+  transition:transform .3s;
+}
+.gallery-grid img:hover { transform:scale(1.05); }
+
+/* ===== LOVE STORY ===== */
+.love-story { background:var(--dark-slate); }
+.timeline { position:relative; max-width:400px; margin:0 auto; padding:10px 0; }
+.timeline::before {
+  content:''; position:absolute; left:50%; top:0; bottom:0;
+  width:2px; background:var(--gold-dark); transform:translateX(-50%);
+}
+.tl-item { position:relative; margin-bottom:40px; text-align:center; padding:0 10px; }
+.tl-dot {
+  width:14px; height:14px; background:var(--gold); border-radius:50%;
+  position:absolute; left:50%; top:0; transform:translateX(-50%);
+  border:3px solid var(--charcoal); z-index:2;
+}
+.tl-content { padding-top:24px; }
+.tl-date { font-family:'Playfair Display'; font-size:14px; color:var(--gold-light); font-weight:600; }
+.tl-title { font-family:'Playfair Display'; font-size:16px; color:var(--white); margin:4px 0 8px; font-weight:700; }
+.tl-text { font-size:12px; color:var(--ivory-dim); line-height:1.8; }
+
+/* ===== GIFT ===== */
+.gift { background:var(--charcoal); text-align:center; }
+.gift-card {
+  background:var(--card-bg); border:1px solid var(--gold-dark);
+  border-radius:16px; padding:24px 20px; max-width:340px; margin:0 auto;
+}
+.gift-card .bank-name { font-size:13px; color:var(--gold); font-weight:600; margin-bottom:6px; letter-spacing:1px; }
+.gift-card .rek-num { font-family:'Playfair Display'; font-size:22px; color:var(--white); font-weight:700; margin:8px 0; letter-spacing:2px; }
+.gift-card .rek-name { font-size:12px; color:var(--ivory-dim); margin-bottom:14px; }
+.btn-copy {
+  display:inline-block; padding:10px 28px;
+  background:var(--gold); color:var(--black);
+  border:none; border-radius:25px; font-family:'Poppins';
+  font-size:13px; font-weight:600; cursor:pointer;
+  transition:all .3s;
+}
+.btn-copy:hover { background:var(--gold-light); }
+.copy-toast {
+  position:fixed; bottom:80px; left:50%; transform:translateX(-50%);
+  background:var(--gold); color:var(--black); padding:10px 20px;
+  border-radius:25px; font-size:13px; font-weight:500;
+  opacity:0; transition:opacity .3s; z-index:999; pointer-events:none;
+}
+.copy-toast.show { opacity:1; }
+
+/* ===== RSVP ===== */
+.rsvp { background:var(--dark-slate); }
+.rsvp-form {
+  background:rgba(245,240,232,0.07); border:1px solid rgba(201,169,110,0.2);
+  border-radius:16px; padding:24px 20px; margin-bottom:24px;
+}
+.rsvp-form label { display:block; font-size:12px; color:var(--ivory-dim); margin-bottom:4px; }
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea {
+  width:100%; padding:10px 14px; border:1px solid rgba(201,169,110,0.3);
+  border-radius:10px; background:rgba(255,255,255,0.05);
+  color:var(--ivory); font-family:'Poppins'; font-size:13px;
+  margin-bottom:14px; outline:none; transition:border .3s;
+}
+.rsvp-form input:focus, .rsvp-form select:focus, .rsvp-form textarea:focus {
+  border-color:var(--gold);
+}
+.rsvp-form textarea { height:80px; resize:vertical; }
+.btn-submit {
+  width:100%; padding:12px;
+  background:var(--gold); color:var(--black);
+  border:none; border-radius:25px; font-family:'Poppins';
+  font-size:14px; font-weight:600; cursor:pointer; transition:all .3s;
+}
+.btn-submit:hover { background:var(--gold-light); }
+.msg-counter { text-align:center; font-size:12px; color:var(--ivory-dim); margin-bottom:16px; }
+.msg-counter strong { color:var(--gold); font-size:18px; }
+.msg-list { max-height:400px; overflow-y:auto; }
+.msg-card {
+  background:var(--card-bg); border-radius:12px; padding:14px;
+  margin-bottom:10px; border-left:3px solid var(--gold);
+}
+.msg-card .msg-head { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.msg-card .msg-avatar {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--gold-dark); display:flex; align-items:center; justify-content:center;
+  font-size:14px; color:var(--black); font-weight:600;
+}
+.msg-card .msg-name { font-size:13px; font-weight:600; color:var(--white); }
+.msg-card .badge {
+  font-size:10px; padding:2px 8px; border-radius:10px; margin-left:6px;
+}
+.badge-hadir { background:rgba(76,175,80,0.2); color:#81c784; }
+.badge-tidak { background:rgba(244,67,54,0.2); color:#e57373; }
+.msg-card .msg-text { font-size:12px; color:var(--ivory-dim); line-height:1.6; }
+.msg-card .msg-time { font-size:10px; color:rgba(200,192,176,0.5); margin-top:6px; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background:url('footer bg.jpg') center/cover no-repeat;
+  position:relative; text-align:center; padding:80px 24px 40px;
+}
+.footer::before { content:''; position:absolute; inset:0; background:var(--overlay-dark); }
+.footer * { position:relative; z-index:2; }
+.footer .thankyou { font-family:'Playfair Display'; font-size:28px; color:var(--white); }
+.footer .heart-icon { font-size:20px; color:var(--gold); margin:10px 0; }
+.footer .couple-script { font-family:'Great Vibes'; font-size:36px; color:var(--gold-light); }
+.footer-bottom {
+  background:var(--ivory); padding:14px; text-align:center;
+}
+.footer-bottom span { font-size:12px; color:var(--charcoal); font-weight:500; }
+
+/* ===== MUSIC PLAYER ===== */
+.music-player {
+  position:fixed; bottom:24px; right:24px; z-index:100;
+  display:flex; align-items:center; gap:8px;
+}
+.disc {
+  width:40px; height:40px; border-radius:50%;
+  background:conic-gradient(#222,#444,#222,#444,#222);
+  border:2px solid var(--gold); display:flex; align-items:center; justify-content:center;
+}
+.disc.spinning { animation:spin 3s linear infinite; }
+.disc-inner { width:12px; height:12px; border-radius:50%; background:var(--gold); }
+@keyframes spin { to { transform:rotate(360deg); } }
+.btn-music {
+  width:40px; height:40px; border-radius:50%;
+  background:var(--gold); border:none; color:var(--black);
+  font-size:16px; cursor:pointer; display:flex;
+  align-items:center; justify-content:center;
+  box-shadow:0 4px 15px rgba(201,169,110,0.4);
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up {
+  opacity:0; transform:translateY(30px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--charcoal); }
+::-webkit-scrollbar-thumb { background:var(--gold-dark); border-radius:4px; }
+
+/* ===== SELECT OPTION FIX ===== */
+.rsvp-form select option { background:var(--card-bg); color:var(--ivory); }
